@@ -28,10 +28,10 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => {
 
   return (
     <div className="fixed inset-0 bg-transparent flex items-end justify-center z-50 animate-slide-up">
-      <div className="bg-black bg-opacity-90 rounded-t-3xl shadow-xl w-full mx-4 max-w-xs mb-0 p-4 pb-6 text-center safe-area-bottom border border-gray-700">
+      <div className="bg-white rounded-t-3xl shadow-xl w-full mx-4 max-w-xs mb-0 p-4 pb-6 text-center safe-area-bottom border border-gray-200">
         {/* Location Warning Message */}
-        <h2 className="text-lg font-semibold text-[#FFFC00] mb-3">Access Restricted</h2>
-        <p className="text-white mb-6 text-sm leading-relaxed">You were removed because your location does not match. Click the join button to verify your location.</p>
+        <h2 className="text-lg font-semibold text-[#3390ec] mb-3">Access Restricted</h2>
+        <p className="text-gray-700 mb-6 text-sm leading-relaxed">You were removed because your location does not match. Click the join button to verify your location.</p>
 
         {/* Member Avatars */}
         <div className="flex justify-center items-center mb-6 -space-x-2">
@@ -40,7 +40,7 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => {
               key={index}
               src={url}
               alt="Member" 
-              className="w-10 h-10 rounded-full border-2 border-[#FFFC00]"
+              className="w-10 h-10 rounded-full border-2 border-[#3390ec]"
             />
           ))}
         </div>
@@ -48,9 +48,9 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => {
         {/* Join Button */}
         <button
           onClick={onJoinClick}
-          className="bg-[#FFFC00] text-black font-semibold py-3 px-6 rounded-full text-base active:bg-[#E6E300] transition-colors w-full touch-manipulation"
+          className="bg-[#3390ec] text-white font-semibold py-3 px-6 rounded-full text-base active:bg-[#2b7cd6] transition-colors w-full touch-manipulation"
         >
-          Join The Group
+          Join The Channel
         </button>
       </div>
       <style>{`
@@ -80,10 +80,10 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, typingAvatar, showJoi
 
   return (
     <>
-      <div ref={scrollRef} className="h-full overflow-y-auto overflow-x-hidden px-3 sm:px-4 pt-4 pb-4 flex flex-col bg-black touch-pan-y" onClick={handleClick}>
+      <div ref={scrollRef} className="h-full overflow-y-auto overflow-x-hidden px-3 sm:px-4 pt-4 pb-4 flex flex-col bg-gray-50 touch-pan-y" onClick={handleClick}>
         {messages.map(msg =>
           msg.type === 'system' ? (
-            <div key={msg.id} className="bg-gray-800 self-center text-center text-sm text-gray-300 rounded-md px-4 py-2 my-3 shadow-sm border border-gray-600 max-w-xs">
+            <div key={msg.id} className="bg-gray-200 self-center text-center text-sm text-gray-600 rounded-md px-4 py-2 my-3 shadow-sm border border-gray-300 max-w-xs">
               {msg.text}
             </div>
           ) : (
