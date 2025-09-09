@@ -6,15 +6,9 @@ export default defineConfig(({ mode }) => {
     return {
       server: {
         host: '0.0.0.0',
-        port: 5173,
-        allowedHosts: [
-          'effb4a6a-7a34-438b-882b-62ea514a3024-00-2itxgzs2e7m2c.worf.replit.dev'
-        ],
-        cors: true,
-        hmr: {
-          host: 'effb4a6a-7a34-438b-882b-62ea514a3024-00-2itxgzs2e7m2c.worf.replit.dev',
-          port: 443
-        }
+        port: 5000,
+        allowedHosts: true,
+        cors: true
       },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
