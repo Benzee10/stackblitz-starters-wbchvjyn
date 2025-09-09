@@ -8,25 +8,25 @@ import type { Message } from './types';
 const ShareGate = ({ shareCount, onShareClick }: { shareCount: number, onShareClick: () => void }) => {
     const progress = (shareCount / 5) * 100;
     return (
-        <div className="absolute inset-0 bg-black flex flex-col items-center justify-center p-6 text-center z-30 safe-area-inset">
-            <h2 className="text-3xl sm:text-2xl font-bold text-[#FFFC00] mb-6">Almost there!</h2>
-            <p className="text-white mb-8 text-xl sm:text-lg leading-relaxed">Share with 5 groups on WhatsApp to unlock the private feed.</p>
+        <div className="absolute inset-0 bg-white flex flex-col items-center justify-center p-6 text-center z-30 safe-area-inset">
+            <h2 className="text-3xl sm:text-2xl font-bold text-[#3390ec] mb-6">Almost there!</h2>
+            <p className="text-gray-700 mb-8 text-xl sm:text-lg leading-relaxed">Share with 5 groups on Telegram to unlock the private channel.</p>
             
-            <div className="w-full max-w-sm bg-gray-300 rounded-full h-10 mb-3 overflow-hidden border border-gray-400">
+            <div className="w-full max-w-sm bg-gray-200 rounded-full h-10 mb-3 overflow-hidden border border-gray-300">
                 <div 
-                    className="bg-green-500 h-full flex items-center justify-center text-white font-bold transition-all duration-500"
+                    className="bg-[#3390ec] h-full flex items-center justify-center text-white font-bold transition-all duration-500"
                     style={{ width: `${progress}%` }}
                 >
                    {shareCount > 0 && `${shareCount}/5`}
                 </div>
             </div>
-             <p className="text-gray-300 mb-10 text-base">Progress: {shareCount} of 5 completed.</p>
+             <p className="text-gray-500 mb-10 text-base">Progress: {shareCount} of 5 completed.</p>
 
             <button
                 onClick={onShareClick}
-                className="w-full max-w-sm bg-[#FFFC00] text-black font-bold py-5 px-6 rounded-full text-xl flex items-center justify-center gap-3 active:bg-[#E6E300] transition-colors touch-manipulation"
+                className="w-full max-w-sm bg-[#3390ec] text-white font-bold py-5 px-6 rounded-full text-xl flex items-center justify-center gap-3 active:bg-[#2b7cd6] transition-colors touch-manipulation"
             >
-                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.433-9.89-9.889-9.89-5.452 0-9.887 4.428-9.888 9.89.001 2.245.654 4.288 1.902 6.046l-1.299 4.753 4.853-1.269z"/></svg>
+                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
                 SHARE TO CONTINUE
             </button>
             <style>{`
@@ -110,8 +110,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black" onClick={handleAnyClick}>
-      <div className="w-full h-screen sm:w-full sm:max-w-md sm:h-[95vh] sm:max-h-[900px] flex flex-col bg-black sm:shadow-2xl sm:rounded-lg overflow-hidden relative" onClick={handleAnyClick}>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100" onClick={handleAnyClick}>
+      <div className="w-full h-screen sm:w-full sm:max-w-md sm:h-[95vh] sm:max-h-[900px] flex flex-col bg-white sm:shadow-2xl sm:rounded-lg overflow-hidden relative" onClick={handleAnyClick}>
         {!showShareGate && (
             <>
                 <Header groupInfo={GROUP_INFO} />
