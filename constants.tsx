@@ -230,9 +230,9 @@ const RANDOM_NUMBER_2 = generateRandomPhoneNumber();
 const RANDOM_NUMBER_3 = generateRandomPhoneNumber();
 
 export const GROUP_INFO = {
-  name: 'Matured mind',
+  name: 'Exclusive Channel',
   avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQie9i0r7RHBOEtDjS-UnnddqqVXsVqK574Ami7K7XYqUhmLeqL8LoODWg&s=10',
-  members: `You, ${RANDOM_NUMBER_1}, ${RANDOM_NUMBER_2}, ${RANDOM_NUMBER_3}`,
+  members: `${RANDOM_NUMBER_1}, ${RANDOM_NUMBER_2}, ${RANDOM_NUMBER_3}, and you`,
 };
 
 const SENDER_1 = {
@@ -259,7 +259,7 @@ const SENDER_3 = {
 export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
     {
         type: 'system',
-        text: `${RANDOM_NUMBER_1} joined the group`,
+        text: `${RANDOM_NUMBER_1} joined the channel`,
         timestamp: '11:15 PM',
         sender: 'other',
     },
@@ -325,7 +325,7 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
     },
     {
         ...SENDER_2,
-        text: "Just the beginning. The real unfiltered content is in the private feed. Only a few spots left.",
+        text: "Just the beginning. The real unfiltered content is in the private channel. Only a few spots left.",
         timestamp: '11:21 PM',
     },
     {
